@@ -1,4 +1,4 @@
-variable "provider" {
+variable "aws" {
   type = "map"
 
   default = {
@@ -25,7 +25,7 @@ variable "tls_name" {
 variable "tls_path" {
   description = "Path to a directory where the public and private key will be stored"
   type = "string"
-  default = "/tmp"
+  default = "/tmp/ssh"
 }
 
 variable "ssh_key" {

@@ -1,6 +1,6 @@
 provider "aws" {
-  region  = "${var.provider["region"]}"
-  profile = "${var.provider["profile"]}"
+  region  = "${var.aws["region"]}"
+  profile = "${var.aws["profile"]}"
 }
 
 locals {
@@ -15,7 +15,7 @@ locals {
 }
 
 module "vpc" {
-  source = "modules/vpc"
+  source = "./modules/vpc"
 
   vpc_cidr   = "${var.vpc_cidr}"
   az_public  = "${var.az_public}"

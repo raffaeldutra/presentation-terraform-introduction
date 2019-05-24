@@ -31,7 +31,7 @@ resource "null_resource" "chmod" {
   count      = "${var.tls_path != "" ? 1 : 0 }"
   depends_on = ["local_file.private_key_pem"]
 
-  triggers {
+  triggers = {
     key = "${tls_private_key.generated.private_key_pem}"
   }
 
