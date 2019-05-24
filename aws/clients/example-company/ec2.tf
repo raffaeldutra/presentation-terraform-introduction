@@ -21,16 +21,16 @@ resource "aws_instance" "ec2_machine" {
   key_name        = "${var.ssh_key}"
 
   tags = {
-    Name        = "CI/CD Instance"
+    Name        = "App Instance"
     Environment = "Production"
     ClientName  = "Example Company"
   }
 }
 
 output "aws_instance_ip" {
-  value = "${aws_instance.gitlab.public_ip}"
+  value = "${aws_instance.ec2_machine.public_ip}"
 }
 
 output "aws_instance_public_dns" {
-  value = "${aws_instance.gitlab.public_dns}"
+  value = "${aws_instance.ec2_machine.public_dns}"
 }

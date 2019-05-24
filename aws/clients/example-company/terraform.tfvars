@@ -5,7 +5,7 @@ client_name   = "example-company"
 account_name  = "example-company"
 project_name  = "example-company-demonstration"
 
-provider = {
+aws = {
     region  = "us-east-1"
     profile = "example-company"
 }
