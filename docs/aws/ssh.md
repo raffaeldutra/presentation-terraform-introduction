@@ -1,4 +1,4 @@
-# EC2 (Elastic Cloud Computing)
+# SSH chaves
 
 No exemplo abaixo será criado os seguintes recursos:
 
