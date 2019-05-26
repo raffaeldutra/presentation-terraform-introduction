@@ -18,4 +18,7 @@ Se preferir, podemos utilizar diretamente de um container:
 
 ## Demonstração
 
-Para demonstração foi escolhido AWS (Amazon Web Services) e todo o código fonte pode ser encontrado aqui neste reposítório.
+Para demonstração foi escolhido AWS (Amazon Web Services) e Digital Ocean e todo o código fonte e documentação pode ser encontrado aqui neste reposítório.
+
+[AWS](docs/aws/readme.md)
+[Digital Ocean](docs/digitalocean/readme.md)
