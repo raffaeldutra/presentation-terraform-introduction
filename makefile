@@ -24,12 +24,14 @@ else
 	pwd = $(shell pwd)
 endif
 
+tag=v0.12.0
+
 init:
 	docker run --rm \
 	-v $(pwd):/terraform \
 	-v $(pwd)/modules:/terraform/modules \
 	-v ${HOME}/.aws:/root/.aws \
-	raffaeldutra/docker-terraform:v0.12.0 \
+	raffaeldutra/docker-terraform:${tag} \
 	terraform init
 
 vpc:
@@ -37,7 +39,7 @@ vpc:
 	-v $(pwd):/terraform \
 	-v $(pwd)/modules:/terraform/modules \
 	-v ${HOME}/.aws:/root/.aws \
-	raffaeldutra/docker-terraform:v0.12.0 \
+	raffaeldutra/docker-terraform:${tag} \
 	terraform plan -target=module.vpc
 
 vpc_apply:
@@ -45,7 +47,7 @@ vpc_apply:
 	-v $(pwd):/terraform \
 	-v $(pwd)/modules:/terraform/modules \
 	-v ${HOME}/.aws:/root/.aws \
-	raffaeldutra/docker-terraform:v0.12.0 \
+	raffaeldutra/docker-terraform:${tag} \
 	terraform apply -target=module.vpc -auto-approve
 
 ssh:
@@ -53,7 +55,7 @@ ssh:
 	-v $(pwd):/terraform \
 	-v $(pwd)/modules:/terraform/modules \
 	-v ${HOME}/.aws:/root/.aws \
-	raffaeldutra/docker-terraform:v0.12.0 \
+	raffaeldutra/docker-terraform:${tag} \
 	terraform plan \
 	-target=local_file.private_key_pem \
 	-target=aws_key_pair.generated
@@ -64,7 +66,7 @@ ssh_apply:
 	-v $(pwd)/modules:/terraform/modules \
 	-v ${HOME}/.aws:/root/.aws \
 	-v $(pwd)/ssh:/tmp/ssh \
-	raffaeldutra/docker-terraform:v0.12.0 \
+	raffaeldutra/docker-terraform:${tag} \
 	terraform apply \
 	-target=local_file.private_key_pem \
 	-target=aws_key_pair.generated
@@ -74,7 +76,7 @@ ec2:
 	-v $(pwd):/terraform \
 	-v $(pwd)/modules:/terraform/modules \
 	-v ${HOME}/.aws:/root/.aws \
-	raffaeldutra/docker-terraform:v0.12.0 \
+	raffaeldutra/docker-terraform:${tag} \
 	terraform plan -target=aws_instance.ec2_machine
 
 ec2_apply:
@@ -82,5 +84,5 @@ ec2_apply:
 	-v $(pwd):/terraform \
 	-v $(pwd)/modules:/terraform/modules \
 	-v ${HOME}/.aws:/root/.aws \
-	raffaeldutra/docker-terraform:v0.12.0 \
+	raffaeldutra/docker-terraform:${tag} \
 	terraform apply -target=aws_instance.ec2_machine -auto-approve
