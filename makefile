@@ -20,6 +20,8 @@ help :
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
 	pwd = ${PWD}
+else
+	pwd = $(shell pwd)
 endif
 
 init:
