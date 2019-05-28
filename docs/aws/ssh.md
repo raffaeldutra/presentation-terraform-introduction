@@ -1,4 +1,4 @@
-# EC2 (Elastic Cloud Computing)
+# SSH chaves
 
 No exemplo abaixo será criado os seguintes recursos:
 
@@ -168,6 +168,7 @@ terraform apply -target=aws_key_pair.generated -auto-approve
 docker run --rm \
 -v $(pwd):/terraform \
 -v $(pwd)/modules:/terraform/modules \
+-v $(pwd)/ssh:/tmp/ssh \
 -v ${HOME}/.aws:/root/.aws \
 raffaeldutra/docker-terraform:v0.12.0 \
 terraform apply -target=aws_key_pair.generated -auto-approve
