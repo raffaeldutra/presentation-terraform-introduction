@@ -15,17 +15,6 @@ Executando em binário.
 terraform plan -target=local_file.private_key_pem
 ```
 
-Executando em Docker.
-
-```
-docker run --rm \
--v $(pwd):/terraform \
--v $(pwd)/modules:/terraform/modules \
--v ${HOME}/.aws:/root/.aws \
-raffaeldutra/docker-terraform:v0.12.0 \
-terraform plan -target=local_file.private_key_pem
-```
-
 A saída será a seguinte:
 
 ```
@@ -78,16 +67,6 @@ Em caso de utilizar binário
 terraform apply -target=local_file.private_key_pem -auto-approve
 ```
 
-```
-docker run --rm \
--v $(pwd):/terraform \
--v $(pwd)/modules:/terraform/modules \
--v ${HOME}/.aws:/root/.aws \
--v $(pwd)/ssh:/tmp/ssh \
-raffaeldutra/docker-terraform:v0.12.0 \
-terraform apply -target=local_file.private_key_pem -auto-approve
-```
-
 A saída será a seguinte:
 
 ```
@@ -108,17 +87,6 @@ private_key_filepath = /tmp/ssh/tls_key.pem
 Executando em binário.
 
 ```
-terraform plan -target=aws_key_pair.generated
-```
-
-Executando em Docker.
-
-```
-docker run --rm \
--v $(pwd):/terraform \
--v $(pwd)/modules:/terraform/modules \
--v ${HOME}/.aws:/root/.aws \
-raffaeldutra/docker-terraform:v0.12.0 \
 terraform plan -target=aws_key_pair.generated
 ```
 
@@ -164,14 +132,4 @@ Em caso de utilizar binário
 terraform apply -target=aws_key_pair.generated -auto-approve
 ```
 
-```
-docker run --rm \
--v $(pwd):/terraform \
--v $(pwd)/modules:/terraform/modules \
--v $(pwd)/ssh:/tmp/ssh \
--v ${HOME}/.aws:/root/.aws \
-raffaeldutra/docker-terraform:v0.12.0 \
-terraform apply -target=aws_key_pair.generated -auto-approve
-```
-
-[Próximo passo, criando máquinas EC2](ec2.md)
+[Criando máquinas EC2](ec2.md)

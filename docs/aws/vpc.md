@@ -17,17 +17,6 @@ Executando em binário.
 terraform plan -target=vpc
 ```
 
-Executando em Docker.
-
-```
-docker run --rm \
--v $(pwd):/terraform \
--v $(pwd)/modules:/terraform/modules \
--v ${HOME}/.aws:/root/.aws \
-raffaeldutra/docker-terraform:v0.12.0 \
-terraform plan -target=module.vpc
-```
-
 A saída será a seguinte:
 
 ```
@@ -223,15 +212,6 @@ Em caso de utilizar binário
 terraform apply -auto-approve
 ```
 
-```
-docker run --rm \
--v $(pwd):/terraform \
--v $(pwd)/modules:/terraform/modules \
--v ${HOME}/.aws:/root/.aws \
-raffaeldutra/docker-terraform:v0.12.0 \
-terraform apply -target=module.vpc -auto-approve
-```
-
 A saída será a seguinte:
 
 ```
@@ -256,4 +236,4 @@ module.vpc.aws_route_table_association.public[0]: Creation complete after 1s [id
 Apply complete! Resources: 8 added, 0 changed, 0 destroyed.
 ```
 
-[Próximo passo, criando chaves SSH](ssh.md)
+[Criando chaves SSH](ssh.md)

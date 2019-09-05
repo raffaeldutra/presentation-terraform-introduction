@@ -13,17 +13,6 @@ Executando em binário.
 terraform plan -target=aws_instance.ec2_machine
 ```
 
-Executando em Docker.
-
-```
-docker run --rm \
--v $(pwd):/terraform \
--v $(pwd)/modules:/terraform/modules \
--v ${HOME}/.aws:/root/.aws \
-raffaeldutra/docker-terraform:v0.12.0 \
-terraform plan -target=aws_instance.ec2_machine
-```
-
 A saída será a seguinte:
 
 ```
@@ -126,15 +115,6 @@ Após verificar a saída, aplique os recursos.
 Em caso de utilizar binário
 
 ```
-terraform apply -target=aws_instance.ec2_machine -auto-approve
-```
-
-```
-docker run --rm \
--v $(pwd):/terraform \
--v $(pwd)/modules:/terraform/modules \
--v ${HOME}/.aws:/root/.aws \
-raffaeldutra/docker-terraform:v0.12.0 \
 terraform apply -target=aws_instance.ec2_machine -auto-approve
 ```
 
