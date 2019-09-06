@@ -10,15 +10,8 @@ RESET  := $(shell tput -Txterm sgr0)
 
 .PHONY : help
 help :
-	@echo "Comandos para Terraform em container."
-	@echo "Para cada chamada, utilize -apply para aplicar o código, por exemplo: ${YELLOW}c-vpc-apply.${RESET}"
-	@echo "c-init    : Inicializa recursos."
-	@echo "c-vpc     : Cria VPC, Subredes, Rotas e Internet Gateway"
-	@echo "c-ssh     : Cria chaves SSH para conectar na EC2"
-	@echo "c-ec2     : Cria máquina Virtual"
-	@echo "c-destroy : ${RED}REMOVE toda infraestrutura.${RESET}"
-	@echo 
 	@echo "Comandos para Terraform local."
+	@echo "Para cada chamada, utilize -apply para aplicar o código, por exemplo: ${YELLOW}vpc-apply.${RESET}"
 	@echo "Para cada chamada, utilize -apply para aplicar o código, por exemplo: ${YELLOW}vpc-apply.${RESET}"
 	@echo "init    : Inicializa recursos."
 	@echo "vpc     : Cria VPC, Subredes, Rotas e Internet Gateway"
