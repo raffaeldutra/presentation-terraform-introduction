@@ -7,7 +7,7 @@ Documentação de como executar a Infraestrutura de forma incremental na Digital
 Sempre será demonstrado como executar os passos de forma tradicional.
 
 * Para este projeto, foi utilizada versão `0.12.0` do `Terraform`.
-* É necessário configurar suas credenciais da AWS, para isso olhe esta documentação neste [link aqui](https://www.terraform.io/docs/providers/aws/index.html).
+* É necessário configurar suas credenciais da Digital Ocean.
 
 Neste exemplo será utilizado variável de ambiente export `TF_VAR_token`.
 
