@@ -7,7 +7,7 @@ No exemplo abaixo será criado os seguintes recursos:
 
 ## Chave privada
 
-Arquivo [ssh.tf](/aws/clients/example-company/ssh.tf)
+Arquivo [ssh.tf](/providers/aws/clients/example-company/ssh.tf)
 
 Executando em binário.
 

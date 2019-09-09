@@ -4,7 +4,7 @@ Documentação de como executar a Infraestrutura de forma incremental.
 
 ## Pré requisitos
 
-Sempre será demonstrado como executar os passos de forma tradicional e em imagem Docker.
+Sempre será demonstrado como executar os passos de forma tradicional.
 
 * Para este projeto, foi utilizada versão `0.12.0` do `Terraform`.
 * É necessário configurar suas credenciais da AWS, para isso olhe esta documentação neste [link aqui](https://www.terraform.io/docs/providers/aws/index.html).

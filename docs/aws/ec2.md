@@ -5,7 +5,7 @@ No exemplo abaixo será criado os seguintes recursos:
 * Máquina Virtual.
 * Grupos de segurança para portas definidas no código.
 
-Arquivo [ec2.tf](/aws/clients/example-company/ec2.tf)
+Arquivo [ec2.tf](/providers/aws/clients/example-company/ec2.tf)
 
 Executando em binário.
 
