@@ -4,7 +4,7 @@ No exemplo abaixo será criado os seguintes recursos:
 
 * Máquina Virtual.
 
-Arquivo [droplet.tf](/providers/digital-ocean/droplet.tf)
+Arquivo [droplet.tf](/providers/digital-ocean/with-modules/droplet.tf)
 
 Antes é necessário criar o primeiro `Workspace` do projeto.
 

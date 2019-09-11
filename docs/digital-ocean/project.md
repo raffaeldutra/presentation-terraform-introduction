@@ -4,7 +4,7 @@ No exemplo abaixo será criado os seguintes recursos:
 
 * Projetos. Projetos são utilizados para melhor organização de recursos que são criados dentro de sua conta
 
-Arquivo [project.tf](/providers/digital-ocean/project.tf)
+Arquivo [project.tf](/providers/digital-ocean/with-modules/project.tf)
 
 Executando o comando do Terraform para verificar o que será criado.
 
