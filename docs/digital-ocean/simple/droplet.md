@@ -1,6 +1,6 @@
 # Criando máquina simples na Digital Ocean
 
-Arquivo [droplet.tf](/providers/digitalocean/simple/droplet.tf)
+Arquivo [droplet.tf](/providers/digital-ocean/simple/droplet.tf)
 
 Execute o comando plan do Terraform:
 
