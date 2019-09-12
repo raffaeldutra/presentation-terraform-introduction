@@ -9,7 +9,7 @@ No exemplo abaixo será criado os seguintes recursos:
 * Internet Gateway
 * Tabelas de roteamento para subredes.
 
-Arquivo [vpc.tf](/providers/aws/clients/example-company/vpc.tf)
+Arquivo [vpc.tf](/providers/aws/with-modulesy/vpc.tf)
 
 Executando em binário.
 
