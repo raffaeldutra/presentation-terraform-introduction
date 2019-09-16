@@ -1,5 +1,7 @@
 # Introdução ao Terraform
 
+![!](https://img.shields.io/github/repo-size/raffaeldutra/presentation-terraform-introduction)  ![!](https://img.shields.io/github/languages/top/raffaeldutra/presentation-terraform-introduction)  ![!](https://img.shields.io/github/v/tag/raffaeldutra/presentation-terraform-introduction)
+
 ## Pré requisitos
 Ter `Terraform` instalado na máquina [https://www.terraform.io/downloads.html](https://www.terraform.io/downloads.html). Aqui estamos utilizando a versão `0.12`.
 
