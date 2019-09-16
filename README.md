@@ -1,9 +1,9 @@
 # Introdução ao Terraform
 
 ## Pré requisitos
-Ter `Terraform` instalado na máquina [https://www.terraform.io/downloads.html](https://www.terraform.io/downloads.html)
+Ter `Terraform` instalado na máquina [https://www.terraform.io/downloads.html](https://www.terraform.io/downloads.html). Aqui estamos utilizando a versão `0.12`.
 
-Se preferir, podemos utilizar diretamente de um container:
+Se preferir, é possível utilizar diretamente de um container:
 * Hub [https://hub.docker.com/r/raffaeldutra/docker-terraform](https://hub.docker.com/r/raffaeldutra/docker-terraform).
 * Código fonte da imagem Docker [https://github.com/raffaeldutra/docker-terraform](https://github.com/raffaeldutra/docker-terraform).
 
