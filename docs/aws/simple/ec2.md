@@ -5,20 +5,11 @@ No exemplo abaixo será criado os seguintes recursos:
 * Máquina Virtual.
 * Grupos de segurança para portas definidas no código.
 
-Arquivo [ec2.tf](/providers/aws/simple/ec2.tf)
+Arquivos:
 
-```
-resource "aws_instance" "web" {
-  ami           = "ami-8eecc9e2"
-  instance_type = "t2.micro"
-
-
-  tags {
-    Name        = "Web",
-    Application = "Application 1"
-  }
-}
-```
+* [provider.tf](/providers/aws/simple/provider.tf)
+* [ec2.tf](/providers/aws/simple/ec2.tf)
+* [variables.tf](/providers/aws/simple/variables.tf)
 
 Rode o comando plan para ver a saída da infraestrutura:
 
