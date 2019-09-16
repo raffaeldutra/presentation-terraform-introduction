@@ -11,14 +11,23 @@ RESET  := $(shell tput -Txterm sgr0)
 .PHONY : help
 help :
 	@echo "Comandos para Terraform local."
-	@echo "Para cada chamada, utilize -apply para aplicar o código, por exemplo: ${YELLOW}vpc-apply.${RESET}"
-	@echo "Para cada chamada, utilize -apply para aplicar o código, por exemplo: ${YELLOW}vpc-apply.${RESET}"
-	@echo "init    : Inicializa recursos."
-	@echo "vpc     : Cria VPC, Subredes, Rotas e Internet Gateway"
-	@echo "ssh     : Cria chaves SSH para conectar na EC2"
-	@echo "ec2     : Cria máquina Virtual"
-	@echo "destroy : ${RED}REMOVE toda infraestrutura.${RESET}"
+	@echo "Para cada chamada, utilize -apply para aplicar o código, por exemplo: ${YELLOW}aws-vpc-apply.${RESET}"
+	@echo "Comandos para AWS"
+	@echo "init               : Inicializa recursos."
+	@echo "aws-vpc            : Plan para VPC, Subredes, Rotas e Internet Gateway"
+	@echo "aws-vpc-apply      : Cria VPC, Subredes, Rotas e Internet Gateway"
+	@echo "aws-ssh            : Plan para chaves SSH para conectar na EC2"
+	@echo "aws-ssh-apply      : Cria chaves SSH para conectar na EC2"
+	@echo "aws-ec2            : Plan para criar máquina Virtual"
+	@echo "aws-ec2-apply      : Cria máquina Virtual"
+	@echo "destroy            : ${RED}REMOVE toda infraestrutura.${RESET}"
 	@echo 
+	@echo "Comandos para AWS"
+	@echo "do-droplet         : Plan para Máquina Virtual"
+	@echo "do-droplet-apply"  : Criar Máquina Virtual"
+	@echo "destroy            : ${RED}REMOVE toda infraestrutura.${RESET}"
+	@echo 
+	
 	
 # Caso OSX, o pwd não é o mesmo de Linux
 UNAME_S := $(shell uname -s)
@@ -28,36 +37,40 @@ else
 	pwd = $(shell pwd)
 endif
 
-tag=v0.12.0
-
-
-# Chamadas para binário
 init:
-	terraform init
+    terraform init
 
-vpc:
+# Digital Ocean
+do-droplet:
+    terraform plan
+
+do-droplet-apply:
+    terraform apply -auto-approve
+
+# AWS
+aws-vpc:
 	terraform plan -target=module.vpc
 
-vpc-apply:
+aws-vpc-apply:
 	terraform apply -target=module.vpc -auto-approve
 
-ssh:
+aws-ssh:
 	terraform plan \
 	-target=local_file.private_key_pem \
 	-target=aws_key_pair.generated
 
-ssh-apply:
+aws-ssh-apply:
 	terraform apply -auto-approve \
 	-target=local_file.private_key_pem \
 	-target=aws_key_pair.generated
 
-ec2:
+aws-ec2:
 	terraform plan \
 	-target=aws_instance.ec2_machine
 
-ec2-apply:
+aws-ec2-apply:
 	terraform apply -auto-approve \
 	-target=aws_instance.ec2_machine
 
-destroy:
+aws-destroy:
 	terraform destroy -auto-approve
