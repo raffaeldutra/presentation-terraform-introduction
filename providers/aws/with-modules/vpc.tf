@@ -3,15 +3,6 @@ provider "aws" {
   profile = "${var.aws["profile"]}"
 }
 
-variable "aws" {
-  type = "map"
-
-  default = {
-    region  = "us-east-1"
-    profile = "example-company"
-  }
-}
-
 locals {
   common_tags = {
     Name        = "${var.environment}"
