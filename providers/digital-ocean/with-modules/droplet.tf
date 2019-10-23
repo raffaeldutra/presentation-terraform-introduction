@@ -4,8 +4,8 @@ module "droplet-web-1" {
 
   name = "web"
   tags = [
-    "environment:${terraform.workspace}",
-    "project:${terraform.workspace}-web-app",
+    "environment:dev",
+    "project:dev-web-app",
     "team-web-app"
   ]
 }
