@@ -2,4 +2,4 @@
 *.retry
 *.tfstate
 *.tfstate.backup
-ssh
+/ssh
