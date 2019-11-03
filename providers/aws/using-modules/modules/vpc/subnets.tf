@@ -11,14 +11,3 @@ resource "aws_subnet" "public" {
     "Name", format("%s-%s-%s", "public", lookup(var.tags["values"], "Name"), lookup(var.az_public[count.index], "az"))
   ))}"
 }
-
-# Internet gateway for the public subnet
-resource "aws_internet_gateway" "gw" {
-
-  vpc_id = "${aws_vpc.vpc.id}"
-
-  tags = "${merge(var.tags["values"],
-    map(
-    "Name", format("%s-%s", "igw" ,lookup(var.tags["values"], "Name"))
-  ))}"
-}

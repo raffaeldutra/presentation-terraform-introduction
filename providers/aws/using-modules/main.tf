@@ -24,6 +24,8 @@ locals {
   }
 }
 
+// Module VPC. It contains all the infrastructure needed to deal with
+// VPC, Subnets, Internet Gateway and Routing Tables
 module "vpc" {
   source = "./modules/vpc"
 
@@ -41,6 +43,15 @@ module "vpc" {
     }
   ]
 
+  tags = {
+    values = "${local.common_tags}"
+  }
+}
+
+// Module VPC. It contains all the infrastructure needed to deal with
+// Virtual Machines, Security Groups and Load balancer structure
+module "ec2" {
+  source =  "./modules/ec2"
 
   tags = {
     values = "${local.common_tags}"
@@ -49,14 +60,6 @@ module "vpc" {
 
 module "ssh" {
   source =  "./modules/ssh"
-
-  tags = {
-    values = "${local.common_tags}"
-  }
-}
-
-module "ec2" {
-  source =  "./modules/ec2"
 
   tags = {
     values = "${local.common_tags}"

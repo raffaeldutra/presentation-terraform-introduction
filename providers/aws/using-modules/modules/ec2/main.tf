@@ -34,7 +34,7 @@ data "aws_subnet" "public" {
 }
 
 resource "aws_instance" "tutorial" {
-  count                       = 1
+  count                       = 2
   ami                         = data.aws_ami.ubuntu_server.id
   instance_type               = var.instance_type[terraform.workspace]
   vpc_security_group_ids      = [aws_security_group.tutorial_sg.id]
