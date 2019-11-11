@@ -38,3 +38,9 @@ module "instance_group_manager" {
   zone              = element(var.zones, 1)
   instance_template = module.compute_engine.self_link
 }
+
+module "backend" {
+  source = "./modules/ce_backend"
+
+
+}
