@@ -23,6 +23,6 @@ Se preferir, é possível utilizar diretamente de um container:
 Para demonstração foi escolhido AWS (Amazon Web Services) e Digital Ocean e todo o código fonte e documentação pode ser encontrado aqui neste reposítório.
 
 * [AWS com Recurso Simples](docs/aws/simple/readme.md)
-* [AWS com utilização de módulos](docs/aws/with-modules/readme.md)
+* [AWS com utilização de módulos](docs/aws/using-modules/readme.md)
 * [Digital Ocean com Recurso Simples](docs/digital-ocean/simple/readme.md)
 * [Digital Ocean com utilização de módulos](docs/digital-ocean/with-modules/readme.md)
