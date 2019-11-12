@@ -9,6 +9,10 @@ variable "zones" {
   default = ["us-central1-a", "us-central1-b"]
 }
 
+locals {
+  projectName = "gdg"
+}
+
 provider "google" {
   // You can pass an another way to use credentials
   // See here: https://www.terraform.io/docs/providers/google/getting_started.html
@@ -20,7 +24,7 @@ provider "google" {
 module "compute_engine" {
   source = "./modules/ce_instance_template"
 
-  name                 = "gdg"
+  name                 = local.projectName
   instance_description = "Google Developers Group"
   project              = var.project
 
@@ -35,6 +39,7 @@ module "compute_engine" {
 module "instance_group_manager" {
   source = "./modules/ce_instance_group_manager"
 
+  name              = local.projectName
   zone              = element(var.zones, 1)
   instance_template = module.compute_engine.self_link
 }
@@ -42,5 +47,5 @@ module "instance_group_manager" {
 module "backend" {
   source = "./modules/ce_backend"
 
-
+  name = local.projectName
 }

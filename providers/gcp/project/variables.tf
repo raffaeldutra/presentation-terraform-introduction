@@ -2,6 +2,6 @@ variable "gcp" {
   type        = map
   description = "Informations used for GCP provider"
   default = {
-    region = "us-central-1"
+    region = "us-central1"
   }
 }

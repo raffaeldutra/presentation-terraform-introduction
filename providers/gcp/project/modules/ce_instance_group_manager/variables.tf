@@ -10,6 +10,12 @@ variable "target_size" {
   default     = 2
 }
 
+// variable "target_pools" {
+//   type        = list
+//   description = "(Required) Target Pools"
+//   default     = []
+// }
+
 variable "zone" {
   type        = string
   description = "(Required) Number"
@@ -17,4 +23,11 @@ variable "zone" {
 
 variable "instance_template" {
   type = string
+  default = null
+}
+
+variable "name" {
+  type        = string
+  description = "(Required) Intance Group Name"
+  default     = null
 }
