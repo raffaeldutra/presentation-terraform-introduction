@@ -28,7 +28,7 @@ module "compute_engine" {
   instance_description = "Google Developers Group"
   project              = var.project
 
-  tags = ["gdg", "gdg-${terraform.workspace}"]
+  tags = ["gdg", "gdg-${terraform.workspace}", "http-server"]
 
   labels = {
     environment = terraform.workspace
@@ -48,4 +48,5 @@ module "backend" {
   source = "./modules/ce_backend"
 
   name = local.projectName
+  group = module.instance_group_manager.instance_group
 }

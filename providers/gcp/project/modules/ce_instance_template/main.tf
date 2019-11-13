@@ -1,5 +1,5 @@
 resource "google_compute_instance_template" "this" {
-  name        = format("%s-cit", lower(var.name))
+  name_prefix = format("%s-cit-", lower(var.name))
   description = "This template is used to create ${lower(var.name)} instances."
 
   tags = var.tags

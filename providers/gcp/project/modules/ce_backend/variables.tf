@@ -4,6 +4,12 @@ variable "name" {
   default     = null
 }
 
+variable "group" {
+  type        = string
+  description = "(Required) Backend Service name"
+  default     = null
+}
+
 variable "load_balancing_scheme" {
   type        = string
   description = "(Required) Kind of Load Balancer"
